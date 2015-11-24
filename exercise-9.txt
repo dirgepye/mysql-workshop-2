@@ -1,0 +1,36 @@
+EXERCISE 9
+
+Q: How many Accounts exist?
+
+mysql> Select count(id) from Account;
++-----------+
+| count(id) |
++-----------+
+|      1000 |
++-----------+
+1 row in set (0.03 sec)
+
+
+
+Q: How many Address Books exist?
+
+mysql> SELECT COUNT(DISTINCT name) FROM AddressBook;
++----------------------+
+| COUNT(DISTINCT name) |
++----------------------+
+|                 1045 |
++----------------------+
+1 row in set (0.00 sec)
+
+
+
+Q: How many Address Book Entries exist?
+
+
+mysql> select count(distinct id) from Entry;
++--------------------+
+| count(distinct id) |
++--------------------+
+|               4000 |
++--------------------+
+1 row in set (0.00 sec)
