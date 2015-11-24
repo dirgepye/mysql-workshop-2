@@ -1,0 +1,51 @@
+EXERCISE 11
+
+Q: How many Address Book Entries are not listed as other?
+
+
+mysql> SELECT COUNT(id) FROM Entry
+    -> WHERE id NOT IN (SELECT id FROM Entry WHERE type = 'other');
++-----------+
+| COUNT(id) |
++-----------+
+|      2800 |
++-----------+
+1 row in set (0.03 sec)
+
+
+
+Q: How many Address Book Entries are listed as either home or work?
+
+mysql> select count(type)
+    -> from Entry
+    -> where type = "home" or type = "work";
++-------------+
+| count(type) |
++-------------+
+|        2800 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> select count(type) from Entry where type in ("home", "work");
++-------------+
+| count(type) |
++-------------+
+|        2800 |
++-------------+
+1 row in set (0.01 sec)
+
+
+
+Q: How many Address Book Entries are listed as phones?
+
+mysql> select count(id)
+    -> from Entry
+    -> where subtype = "phone";
++-----------+
+| count(id) |
++-----------+
+|       600 |
++-----------+
+1 row in set (0.00 sec)
+
+
