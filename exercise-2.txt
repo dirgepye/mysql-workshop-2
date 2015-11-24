@@ -1,0 +1,63 @@
+EXERCISE 2
+
+
+INSERT ROW INTO Account >>>>>>>>>>>>>>>>>>>>>>>>>
+
+INPUT:
+
+mysql> INSERT INTO Account(id, email, password) VALUES ('200','steve@thejerkstore.com','abc123');
+Query OK, 1 row affected, 1 warning (0.06 sec)
+
+RESULT:
+
+mysql> select * from Account;
++-----+------------------------+----------+---------------------+------------+
+| id  | email                  | password | createdOn           | modifiedOn |
++-----+------------------------+----------+---------------------+------------+
+| 200 | steve@thejerkstore.com | abc123   | 0000-00-00 00:00:00 | NULL       |
++-----+------------------------+----------+---------------------+------------+
+1 row in set (0.00 sec)
+
+
+
+INSERT ROW INTO AddressBook >>>>>>>>>>>>>>>>>>>>
+
+INPUT: 
+
+mysql> INSERT INTO AddressBook (accountId, name, createdOn, modifiedOn) 
+VALUES ('222','Steve','2011-09-02','2014-29-12');
+Query OK, 1 row affected, 1 warning (0.05 sec)
+
+RESULT:
+
+mysql> select * from AddressBook;
++----+-----------+-------+---------------------+---------------------+
+| id | accountId | name  | createdOn           | modifiedOn          |
++----+-----------+-------+---------------------+---------------------+
+|  1 |       222 | Steve | 2011-09-02 00:00:00 | 0000-00-00 00:00:00 |
++----+-----------+-------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+
+
+INSERT THREE ROWS INTO decodemtl_addressbook.Entr >>>>>>>>>>>>>
+
+INPUT:
+
+mysql> INSERT INTO Entry (addressBookId, firstName, lastName, birthday, type, subtype, ContentLineOne)
+    -> VALUES ('100','Steve','Coolguy','2014-04-30','home','email','Pretty cool guy'),
+    -> ('200','Garbage','Boy','1986-01-01','work','address','Garbage'),
+    -> ('300','Richard','Nixon','1911-03-26','other','phone','Former president');
+Query OK, 3 rows affected (0.10 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne   | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+|  1 |           100 | Steve     | Coolguy  | 2014-04-30 00:00:00 | home  | email   | Pretty cool guy  | NULL           | NULL             | NULL            | NULL            |
+|  2 |           200 | Garbage   | Boy      | 1986-01-01 00:00:00 | work  | address | Garbage          | NULL           | NULL             | NULL            | NULL            |
+|  3 |           300 | Richard   | Nixon    | 1911-03-26 00:00:00 | other | phone   | Former president | NULL           | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
+
