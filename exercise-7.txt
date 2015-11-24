@@ -1,0 +1,13 @@
+EXERCISE 7
+
+mysql> create database decodemtl_adressbook_import
+
+mysql> use decodemtl_adressbook_import
+
+mysql> source data/import-table-structure.sql
+
+mysql> source data/import-accounts.sql
+
+mysql> source data/import-addressbook.sql
+
+mysql> source data/import-entry.sql
