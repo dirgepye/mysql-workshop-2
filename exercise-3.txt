@@ -1,0 +1,36 @@
+EXERCISE 3
+
+
+RETRIEVE DATA FROM decodemtl_addressbook.Account
+
+mysql> select * from Account;
++-----+------------------------+----------+---------------------+------------+
+| id  | email                  | password | createdOn           | modifiedOn |
++-----+------------------------+----------+---------------------+------------+
+| 200 | steve@thejerkstore.com | abc123   | 0000-00-00 00:00:00 | NULL       |
++-----+------------------------+----------+---------------------+------------+
+1 row in set (0.00 sec)
+
+
+RETRIEVE DATA FROM decodemtl_addressbook.AddressBook
+
+mysql> select * from AddressBook;
++----+-----------+-------+---------------------+---------------------+
+| id | accountId | name  | createdOn           | modifiedOn          |
++----+-----------+-------+---------------------+---------------------+
+|  1 |       222 | Steve | 2011-09-02 00:00:00 | 0000-00-00 00:00:00 |
++----+-----------+-------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+
+RETRIEVE DATA FROM decodemtl_addressbook.Entry
+
+mysql> select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne   | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+|  1 |           100 | Steve     | Coolguy  | 2014-04-30 00:00:00 | home  | email   | Pretty cool guy  | NULL           | NULL             | NULL            | NULL            |
+|  2 |           200 | Garbage   | Boy      | 1986-01-01 00:00:00 | work  | address | Garbage          | NULL           | NULL             | NULL            | NULL            |
+|  3 |           300 | Richard   | Nixon    | 1911-03-26 00:00:00 | other | phone   | Former president | NULL           | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+------------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
