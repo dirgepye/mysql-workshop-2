@@ -1,0 +1,59 @@
+EXERCISE 4
+
+
+
+MODIFY THE decodemtl_addressbook.Account ROW >>>>>>>>>>>>
+
+mysql> UPDATE Account
+    -> SET password='321xyz'
+    -> WHERE email="steve@thejerkstore.com";
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Account;
++-----+------------------------+----------+---------------------+------------+
+| id  | email                  | password | createdOn           | modifiedOn |
++-----+------------------------+----------+---------------------+------------+
+| 200 | steve@thejerkstore.com | 321xyz   | 0000-00-00 00:00:00 | NULL       |
++-----+------------------------+----------+---------------------+------------+
+1 row in set (0.00 sec)
+
+
+
+
+MODIFY THE decodemtl_addressbook.AddressBook ROW >>>>>>>>
+
+mysql> UPDATE AddressBook
+    -> SET accountID = "666"
+    -> WHERE name="steve";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from AddressBook;
++----+-----------+-------+---------------------+---------------------+
+| id | accountId | name  | createdOn           | modifiedOn          |
++----+-----------+-------+---------------------+---------------------+
+|  1 |       222 | Steve | 2011-09-02 00:00:00 | 0000-00-00 00:00:00 |
++----+-----------+-------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+
+
+
+MODIFY THREE decodemtl_addressbook.Entry ROWS USING ONE QUERY >>>
+
+mysql> UPDATE Entry
+    -> SET contentLineOne = "Just awful"                                                                                           
+    -> WHERE firstName IN ('Garbage','Steve','Richard');
+Query OK, 3 rows affected (0.06 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+|  1 |           100 | Steve     | Coolguy  | 2014-04-30 00:00:00 | home  | email   | Just awful     | NULL           | NULL             | NULL            | NULL            |
+|  2 |           200 | Garbage   | Boy      | 1986-01-01 00:00:00 | work  | address | Just awful     | NULL           | NULL             | NULL            | NULL            |
+|  3 |           300 | Richard   | Nixon    | 1911-03-26 00:00:00 | other | phone   | Just awful     | NULL           | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+----------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
